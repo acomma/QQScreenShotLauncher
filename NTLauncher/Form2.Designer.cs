@@ -107,7 +107,7 @@
             // 
             groupBox10.Controls.Add(checkBox12);
             groupBox10.Controls.Add(checkBox11);
-            groupBox10.Location = new Point(544, 177);
+            groupBox10.Location = new Point(544, 176);
             groupBox10.Name = "groupBox10";
             groupBox10.Size = new Size(543, 100);
             groupBox10.TabIndex = 5;
@@ -117,7 +117,7 @@
             // checkBox12
             // 
             checkBox12.AutoSize = true;
-            checkBox12.Location = new Point(7, 63);
+            checkBox12.Location = new Point(6, 63);
             checkBox12.Name = "checkBox12";
             checkBox12.Size = new Size(234, 28);
             checkBox12.TabIndex = 1;
@@ -127,7 +127,7 @@
             // checkBox11
             // 
             checkBox11.AutoSize = true;
-            checkBox11.Location = new Point(7, 29);
+            checkBox11.Location = new Point(6, 29);
             checkBox11.Name = "checkBox11";
             checkBox11.Size = new Size(322, 28);
             checkBox11.TabIndex = 0;
@@ -137,7 +137,7 @@
             // groupBox9
             // 
             groupBox9.Controls.Add(checkBox10);
-            groupBox9.Location = new Point(29, 177);
+            groupBox9.Location = new Point(29, 176);
             groupBox9.Name = "groupBox9";
             groupBox9.Size = new Size(496, 100);
             groupBox9.TabIndex = 4;
@@ -147,7 +147,7 @@
             // checkBox10
             // 
             checkBox10.AutoSize = true;
-            checkBox10.Location = new Point(7, 29);
+            checkBox10.Location = new Point(6, 29);
             checkBox10.Name = "checkBox10";
             checkBox10.Size = new Size(403, 28);
             checkBox10.TabIndex = 0;
@@ -168,7 +168,7 @@
             // checkBox9
             // 
             checkBox9.AutoSize = true;
-            checkBox9.Location = new Point(20, 84);
+            checkBox9.Location = new Point(6, 84);
             checkBox9.Name = "checkBox9";
             checkBox9.Size = new Size(281, 28);
             checkBox9.TabIndex = 1;
@@ -178,7 +178,7 @@
             // checkBox8
             // 
             checkBox8.AutoSize = true;
-            checkBox8.Location = new Point(21, 39);
+            checkBox8.Location = new Point(6, 39);
             checkBox8.Name = "checkBox8";
             checkBox8.Size = new Size(301, 28);
             checkBox8.TabIndex = 0;
@@ -188,7 +188,7 @@
             // groupBox7
             // 
             groupBox7.Controls.Add(checkBox7);
-            groupBox7.Location = new Point(469, 102);
+            groupBox7.Location = new Point(469, 103);
             groupBox7.Name = "groupBox7";
             groupBox7.Size = new Size(231, 66);
             groupBox7.TabIndex = 2;
@@ -210,7 +210,7 @@
             groupBox6.Controls.Add(checkBox6);
             groupBox6.Controls.Add(checkBox5);
             groupBox6.Controls.Add(checkBox4);
-            groupBox6.Location = new Point(29, 102);
+            groupBox6.Location = new Point(29, 103);
             groupBox6.Name = "groupBox6";
             groupBox6.Size = new Size(428, 66);
             groupBox6.TabIndex = 1;
@@ -220,7 +220,7 @@
             // checkBox6
             // 
             checkBox6.AutoSize = true;
-            checkBox6.Location = new Point(302, 29);
+            checkBox6.Location = new Point(300, 29);
             checkBox6.Name = "checkBox6";
             checkBox6.Size = new Size(108, 28);
             checkBox6.TabIndex = 2;
@@ -230,7 +230,7 @@
             // checkBox5
             // 
             checkBox5.AutoSize = true;
-            checkBox5.Location = new Point(139, 29);
+            checkBox5.Location = new Point(135, 29);
             checkBox5.Name = "checkBox5";
             checkBox5.Size = new Size(144, 28);
             checkBox5.TabIndex = 1;
@@ -240,7 +240,7 @@
             // checkBox4
             // 
             checkBox4.AutoSize = true;
-            checkBox4.Location = new Point(7, 29);
+            checkBox4.Location = new Point(6, 29);
             checkBox4.Name = "checkBox4";
             checkBox4.Size = new Size(108, 28);
             checkBox4.TabIndex = 0;
@@ -262,7 +262,7 @@
             // checkBox3
             // 
             checkBox3.AutoSize = true;
-            checkBox3.Location = new Point(398, 29);
+            checkBox3.Location = new Point(397, 29);
             checkBox3.Name = "checkBox3";
             checkBox3.Size = new Size(192, 28);
             checkBox3.TabIndex = 2;
@@ -272,7 +272,7 @@
             // checkBox2
             // 
             checkBox2.AutoSize = true;
-            checkBox2.Location = new Point(178, 29);
+            checkBox2.Location = new Point(181, 29);
             checkBox2.Name = "checkBox2";
             checkBox2.Size = new Size(179, 28);
             checkBox2.TabIndex = 1;
@@ -282,7 +282,7 @@
             // checkBox1
             // 
             checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(7, 29);
+            checkBox1.Location = new Point(6, 29);
             checkBox1.Name = "checkBox1";
             checkBox1.Size = new Size(138, 28);
             checkBox1.TabIndex = 0;
@@ -311,7 +311,7 @@
             // 
             // textBox4
             // 
-            textBox4.Location = new Point(207, 148);
+            textBox4.Location = new Point(207, 149);
             textBox4.Name = "textBox4";
             textBox4.Size = new Size(901, 30);
             textBox4.TabIndex = 10;
@@ -319,7 +319,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(6, 154);
+            label4.Location = new Point(6, 152);
             label4.Name = "label4";
             label4.Size = new Size(181, 24);
             label4.TabIndex = 9;
@@ -327,7 +327,7 @@
             // 
             // textBox3
             // 
-            textBox3.Location = new Point(207, 106);
+            textBox3.Location = new Point(207, 109);
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(901, 30);
             textBox3.TabIndex = 8;
@@ -343,7 +343,7 @@
             // 
             // button3
             // 
-            button3.Location = new Point(932, 68);
+            button3.Location = new Point(932, 67);
             button3.Name = "button3";
             button3.Size = new Size(176, 34);
             button3.TabIndex = 6;
@@ -352,7 +352,7 @@
             // 
             // button2
             // 
-            button2.Location = new Point(786, 68);
+            button2.Location = new Point(786, 67);
             button2.Name = "button2";
             button2.Size = new Size(140, 34);
             button2.TabIndex = 5;
@@ -361,7 +361,7 @@
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(207, 67);
+            textBox2.Location = new Point(207, 69);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(573, 30);
             textBox2.TabIndex = 4;
@@ -369,7 +369,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(6, 73);
+            label2.Location = new Point(6, 72);
             label2.Name = "label2";
             label2.Size = new Size(121, 24);
             label2.TabIndex = 3;
@@ -377,7 +377,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(996, 22);
+            button1.Location = new Point(996, 27);
             button1.Name = "button1";
             button1.Size = new Size(112, 34);
             button1.TabIndex = 2;
@@ -386,7 +386,7 @@
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(207, 26);
+            textBox1.Location = new Point(207, 29);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(783, 30);
             textBox1.TabIndex = 1;
@@ -410,7 +410,7 @@
             groupBox3.Controls.Add(label5);
             groupBox3.Location = new Point(12, 507);
             groupBox3.Name = "groupBox3";
-            groupBox3.Size = new Size(600, 117);
+            groupBox3.Size = new Size(604, 117);
             groupBox3.TabIndex = 2;
             groupBox3.TabStop = false;
             groupBox3.Text = "插件";
@@ -418,7 +418,7 @@
             // checkBox13
             // 
             checkBox13.AutoSize = true;
-            checkBox13.Location = new Point(486, 71);
+            checkBox13.Location = new Point(486, 69);
             checkBox13.Name = "checkBox13";
             checkBox13.Size = new Size(108, 28);
             checkBox13.TabIndex = 5;
@@ -494,7 +494,7 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(239, 34);
+            label8.Location = new Point(242, 36);
             label8.Name = "label8";
             label8.Size = new Size(23, 24);
             label8.TabIndex = 4;
@@ -502,22 +502,22 @@
             // 
             // textBox9
             // 
-            textBox9.Location = new Point(268, 32);
+            textBox9.Location = new Point(268, 33);
             textBox9.Name = "textBox9";
-            textBox9.Size = new Size(86, 30);
+            textBox9.Size = new Size(102, 30);
             textBox9.TabIndex = 3;
             // 
             // textBox8
             // 
-            textBox8.Location = new Point(143, 32);
+            textBox8.Location = new Point(137, 33);
             textBox8.Name = "textBox8";
-            textBox8.Size = new Size(90, 30);
+            textBox8.Size = new Size(102, 30);
             textBox8.TabIndex = 2;
             // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(114, 36);
+            label7.Location = new Point(111, 36);
             label7.Name = "label7";
             label7.Size = new Size(23, 24);
             label7.TabIndex = 1;
@@ -525,7 +525,7 @@
             // 
             // textBox7
             // 
-            textBox7.Location = new Point(6, 32);
+            textBox7.Location = new Point(6, 33);
             textBox7.Name = "textBox7";
             textBox7.Size = new Size(102, 30);
             textBox7.TabIndex = 0;
@@ -569,6 +569,7 @@
             Controls.Add(groupBox3);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "Form2";
