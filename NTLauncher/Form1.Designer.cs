@@ -75,6 +75,7 @@
             toolStripMenuItem2.Name = "toolStripMenuItem2";
             toolStripMenuItem2.Size = new Size(240, 30);
             toolStripMenuItem2.Text = "设置";
+            toolStripMenuItem2.Click += toolStripMenuItem2_Click;
             // 
             // toolStripMenuItem3
             // 
