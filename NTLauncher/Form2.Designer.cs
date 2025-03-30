@@ -168,7 +168,7 @@
             // checkBox9
             // 
             checkBox9.AutoSize = true;
-            checkBox9.Location = new Point(6, 84);
+            checkBox9.Location = new Point(6, 66);
             checkBox9.Name = "checkBox9";
             checkBox9.Size = new Size(281, 28);
             checkBox9.TabIndex = 1;
@@ -178,7 +178,7 @@
             // checkBox8
             // 
             checkBox8.AutoSize = true;
-            checkBox8.Location = new Point(6, 39);
+            checkBox8.Location = new Point(6, 29);
             checkBox8.Name = "checkBox8";
             checkBox8.Size = new Size(301, 28);
             checkBox8.TabIndex = 0;
@@ -418,7 +418,7 @@
             // checkBox13
             // 
             checkBox13.AutoSize = true;
-            checkBox13.Location = new Point(486, 69);
+            checkBox13.Location = new Point(482, 69);
             checkBox13.Name = "checkBox13";
             checkBox13.Size = new Size(108, 28);
             checkBox13.TabIndex = 5;
