@@ -40,6 +40,7 @@
             Name = "Form2";
             ShowIcon = false;
             ShowInTaskbar = false;
+            StartPosition = FormStartPosition.Manual;
             Text = "设置";
             ResumeLayout(false);
         }

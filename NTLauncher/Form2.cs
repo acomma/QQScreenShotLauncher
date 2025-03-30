@@ -15,6 +15,11 @@ namespace NTLauncher
         public Form2()
         {
             InitializeComponent();
+
+            Screen screen = Screen.FromPoint(new Point(Cursor.Position.X, Cursor.Position.Y));
+            int x = screen.WorkingArea.X + screen.WorkingArea.Width - this.Width;
+            int y = screen.WorkingArea.Y + screen.WorkingArea.Height - this.Height;
+            this.Location = new Point(x, y);
         }
     }
 }
