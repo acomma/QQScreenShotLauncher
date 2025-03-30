@@ -6,5 +6,10 @@ namespace NTLauncher
         {
             InitializeComponent();
         }
+
+        private void toolStripMenuItem7_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

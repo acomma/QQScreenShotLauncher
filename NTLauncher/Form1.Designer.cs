@@ -57,64 +57,65 @@
             contextMenuStrip1.ImageScalingSize = new Size(24, 24);
             contextMenuStrip1.Items.AddRange(new ToolStripItem[] { toolStripMenuItem1, toolStripSeparator1, toolStripMenuItem2, toolStripMenuItem3, toolStripSeparator2, toolStripMenuItem4, toolStripMenuItem5, toolStripMenuItem6, toolStripSeparator3, toolStripMenuItem7 });
             contextMenuStrip1.Name = "contextMenuStrip1";
-            contextMenuStrip1.Size = new Size(171, 232);
+            contextMenuStrip1.Size = new Size(241, 265);
             // 
             // toolStripMenuItem1
             // 
             toolStripMenuItem1.Name = "toolStripMenuItem1";
-            toolStripMenuItem1.Size = new Size(170, 30);
+            toolStripMenuItem1.Size = new Size(240, 30);
             toolStripMenuItem1.Text = "关于";
             // 
             // toolStripSeparator1
             // 
             toolStripSeparator1.Name = "toolStripSeparator1";
-            toolStripSeparator1.Size = new Size(167, 6);
+            toolStripSeparator1.Size = new Size(237, 6);
             // 
             // toolStripMenuItem2
             // 
             toolStripMenuItem2.Name = "toolStripMenuItem2";
-            toolStripMenuItem2.Size = new Size(170, 30);
+            toolStripMenuItem2.Size = new Size(240, 30);
             toolStripMenuItem2.Text = "设置";
             // 
             // toolStripMenuItem3
             // 
             toolStripMenuItem3.Name = "toolStripMenuItem3";
-            toolStripMenuItem3.Size = new Size(170, 30);
+            toolStripMenuItem3.Size = new Size(240, 30);
             toolStripMenuItem3.Text = "插件管理";
             // 
             // toolStripSeparator2
             // 
             toolStripSeparator2.Name = "toolStripSeparator2";
-            toolStripSeparator2.Size = new Size(167, 6);
+            toolStripSeparator2.Size = new Size(237, 6);
             // 
             // toolStripMenuItem4
             // 
             toolStripMenuItem4.Name = "toolStripMenuItem4";
-            toolStripMenuItem4.Size = new Size(170, 30);
+            toolStripMenuItem4.Size = new Size(240, 30);
             toolStripMenuItem4.Text = "以图搜图";
             // 
             // toolStripMenuItem5
             // 
             toolStripMenuItem5.Name = "toolStripMenuItem5";
-            toolStripMenuItem5.Size = new Size(170, 30);
+            toolStripMenuItem5.Size = new Size(240, 30);
             toolStripMenuItem5.Text = "批量OCR";
             // 
             // toolStripMenuItem6
             // 
             toolStripMenuItem6.Name = "toolStripMenuItem6";
-            toolStripMenuItem6.Size = new Size(170, 30);
+            toolStripMenuItem6.Size = new Size(240, 30);
             toolStripMenuItem6.Text = "扫描二维码";
             // 
             // toolStripSeparator3
             // 
             toolStripSeparator3.Name = "toolStripSeparator3";
-            toolStripSeparator3.Size = new Size(167, 6);
+            toolStripSeparator3.Size = new Size(237, 6);
             // 
             // toolStripMenuItem7
             // 
             toolStripMenuItem7.Name = "toolStripMenuItem7";
-            toolStripMenuItem7.Size = new Size(170, 30);
+            toolStripMenuItem7.Size = new Size(240, 30);
             toolStripMenuItem7.Text = "退出";
+            toolStripMenuItem7.Click += toolStripMenuItem7_Click;
             // 
             // Form1
             // 
