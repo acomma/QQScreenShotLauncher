@@ -547,6 +547,7 @@
             button6.TabIndex = 5;
             button6.Text = "确定";
             button6.UseVisualStyleBackColor = true;
+            button6.Click += button6_Click;
             // 
             // button7
             // 
@@ -556,6 +557,7 @@
             button7.TabIndex = 6;
             button7.Text = "取消";
             button7.UseVisualStyleBackColor = true;
+            button7.Click += button7_Click;
             // 
             // Form2
             // 
