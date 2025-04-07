@@ -21,6 +21,12 @@
     <ClInclude Include="pch.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="qq_ipc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="mojo_call_export.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">

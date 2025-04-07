@@ -140,7 +140,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="framework.h" />
+    <ClInclude Include="mojo_call_export.h" />
     <ClInclude Include="pch.h" />
+    <ClInclude Include="qq_ipc.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp" />
