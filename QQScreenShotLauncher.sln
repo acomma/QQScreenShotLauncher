@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.11.35312.102
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NTLauncher", "NTLauncher\NTLauncher.csproj", "{8F77B01A-6660-4DEC-9539-31F24D028E50}"
+	ProjectSection(ProjectDependencies) = postProject
+		{507BA521-40C2-40B3-BCFA-C0A38A6CD3EE} = {507BA521-40C2-40B3-BCFA-C0A38A6CD3EE}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MMMojoCallWrapper", "MMMojoCallWrapper\MMMojoCallWrapper.vcxproj", "{507BA521-40C2-40B3-BCFA-C0A38A6CD3EE}"
 EndProject
