@@ -73,6 +73,19 @@ namespace NTLauncher
                 QQIpcWrapper.DeleteQQIpcParentWrapper(this.parent);
             }
 
+            if (this.config.AutoExitClear == "true")
+            {
+                string folder = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\Temp\\Capture";
+                if (Directory.Exists(folder))
+                {
+                    string[] files = Directory.GetFiles(folder);
+                    foreach (string file in files)
+                    {
+                        File.Delete(file);
+                    }
+                }
+            }
+
             Application.Exit();
         }
 

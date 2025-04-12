@@ -538,6 +538,7 @@
             button5.TabIndex = 4;
             button5.Text = "清空截图缓存";
             button5.UseVisualStyleBackColor = true;
+            button5.MouseClick += button5_MouseClick;
             // 
             // button6
             // 

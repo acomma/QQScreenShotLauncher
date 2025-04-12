@@ -85,5 +85,18 @@ namespace NTLauncher
         {
             this.DialogResult = DialogResult.Cancel;
         }
+
+        private void button5_MouseClick(object sender, MouseEventArgs e)
+        {
+            string folder = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\Temp\\Capture";
+            if (Directory.Exists(folder))
+            {
+                string[] files = Directory.GetFiles(folder);
+                foreach (string file in files)
+                {
+                    File.Delete(file);
+                }
+            }
+        }
     }
 }
