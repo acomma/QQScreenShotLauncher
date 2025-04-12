@@ -1,9 +1,19 @@
+using System.Runtime.InteropServices;
+
 namespace NTLauncher
 {
     public partial class Form1 : Form
     {
         private ConfigHandler handler;
         private Config config;
+        private IntPtr parent;
+        private int pid;
+
+        private QQIpcWrapper.CallbackIpc callbackIpc = (IntPtr pArg, string msg, int arg3, string addition_msg, int addition_msg_size) =>
+        {
+            //string message = $"进程消息：{msg}，大小：{arg3}\n附加消息：{addition_msg}，大小：{addition_msg_size}";
+            //MessageBox.Show(message, "回调提示");
+        };
 
         public Form1()
         {
@@ -11,10 +21,37 @@ namespace NTLauncher
 
             this.handler = new ConfigHandler(Application.StartupPath + "config.ini");
             this.config = this.handler.Read();
+
+            this.parent = QQIpcWrapper.CreateQQIpcParentWrapper();
+            bool success = QQIpcWrapper.QQIpcParentWrapper_InitEnv(this.parent, Application.StartupPath + "parent-ipc-core-x64.dll");
+            if (!success)
+            {
+                IntPtr ptr = QQIpcWrapper.QQIpcParentWrapper_GetLastErrStr(this.parent);
+                string? msg = Marshal.PtrToStringAnsi(ptr);
+                MessageBox.Show(msg, "启动错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                QQIpcWrapper.DeleteQQIpcChildWrapper(this.parent);
+
+                Environment.Exit(0);
+            }
+            //QQIpcWrapper.QQIpcParentWrapper_SetLogLevel(this.parent, 0);
+            QQIpcWrapper.QQIpcParentWrapper_InitLog(this.parent, 0, IntPtr.Zero);
+            QQIpcWrapper.QQIpcParentWrapper_InitParentIpc(this.parent);
+            this.pid = QQIpcWrapper.QQIpcParentWrapper_LaunchChildProcess(this.parent, this.config.QQScreenShot, callbackIpc, IntPtr.Zero, [], 0);
+            QQIpcWrapper.QQIpcParentWrapper_ConnectedToChildProcess(this.parent, this.pid);
         }
 
         private void toolStripMenuItem7_Click(object sender, EventArgs e)
         {
+            if (this.parent != IntPtr.Zero)
+            {
+                if (pid > 0)
+                {
+                    QQIpcWrapper.QQIpcParentWrapper_TerminateChildProcess(this.parent, this.pid, 0, true);
+                }
+                QQIpcWrapper.DeleteQQIpcParentWrapper(this.parent);
+            }
+
             Application.Exit();
         }
 
@@ -38,6 +75,14 @@ namespace NTLauncher
             else
             {
                 this.form2.Activate();
+            }
+        }
+
+        private void notifyIcon1_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left && this.config.EnableScreenShot == "true")
+            {
+                QQIpcWrapper.QQIpcParentWrapper_SendIpcMessage(this.parent, this.pid, "screenShot", "", 0);
             }
         }
     }
