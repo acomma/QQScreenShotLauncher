@@ -8,6 +8,7 @@ namespace NTLauncher
         private Config config;
         private IntPtr parent;
         private int pid;
+        private int ID_SCREENSHOTHOTKEY = 61166;
 
         private QQIpcWrapper.CallbackIpc callbackIpc = (IntPtr pArg, string msg, int arg3, string addition_msg, int addition_msg_size) =>
         {
@@ -39,12 +40,32 @@ namespace NTLauncher
             QQIpcWrapper.QQIpcParentWrapper_InitParentIpc(this.parent);
             this.pid = QQIpcWrapper.QQIpcParentWrapper_LaunchChildProcess(this.parent, this.config.QQScreenShot, callbackIpc, IntPtr.Zero, [], 0);
             QQIpcWrapper.QQIpcParentWrapper_ConnectedToChildProcess(this.parent, this.pid);
+
+            if (this.config.EnableHotKey == "true")
+            {
+                string[] hotKey = this.config.HotKey.Split('+');
+                Keys vk = (Keys)Enum.Parse(typeof(Keys), hotKey[2]);
+                success = HotKey.RegisterHotKey(this.Handle, ID_SCREENSHOTHOTKEY, KeyModifiers.Ctrl | KeyModifiers.Alt, vk);
+                if (!success)
+                {
+                    int error = Marshal.GetLastWin32Error();
+                    if (error == 1409)
+                    {
+                        MessageBox.Show("热键被占用！", "热键提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("注册热键失败！错误代码：" + error, "热键提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+            }
         }
 
         private void toolStripMenuItem7_Click(object sender, EventArgs e)
         {
             if (this.parent != IntPtr.Zero)
             {
+                HotKey.UnregisterHotKey(this.Handle, ID_SCREENSHOTHOTKEY);
                 if (pid > 0)
                 {
                     QQIpcWrapper.QQIpcParentWrapper_TerminateChildProcess(this.parent, this.pid, 0, true);
@@ -83,6 +104,22 @@ namespace NTLauncher
             if (e.Button == MouseButtons.Left && this.config.EnableScreenShot == "true")
             {
                 QQIpcWrapper.QQIpcParentWrapper_SendIpcMessage(this.parent, this.pid, "screenShot", "", 0);
+            }
+        }
+
+        protected override void WndProc(ref Message m)
+        {
+            switch (m.Msg)
+            {
+                case HotKey.WM_HOTKEY:
+                    if (m.WParam.ToInt32() == ID_SCREENSHOTHOTKEY && this.config.EnableScreenShot == "true")
+                    {
+                        QQIpcWrapper.QQIpcParentWrapper_SendIpcMessage(this.parent, this.pid, "screenShot", "", 0);
+                    }
+                    break;
+                default:
+                    base.WndProc(ref m);
+                    break;
             }
         }
     }
