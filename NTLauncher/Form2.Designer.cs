@@ -484,7 +484,7 @@
             // checkBox14
             // 
             checkBox14.AutoSize = true;
-            checkBox14.Location = new Point(379, 34);
+            checkBox14.Location = new Point(379, 29);
             checkBox14.Name = "checkBox14";
             checkBox14.Size = new Size(108, 28);
             checkBox14.TabIndex = 5;
@@ -494,7 +494,7 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(242, 36);
+            label8.Location = new Point(242, 31);
             label8.Name = "label8";
             label8.Size = new Size(23, 24);
             label8.TabIndex = 4;
@@ -502,14 +502,14 @@
             // 
             // textBox9
             // 
-            textBox9.Location = new Point(268, 33);
+            textBox9.Location = new Point(268, 28);
             textBox9.Name = "textBox9";
             textBox9.Size = new Size(102, 30);
             textBox9.TabIndex = 3;
             // 
             // textBox8
             // 
-            textBox8.Location = new Point(137, 33);
+            textBox8.Location = new Point(137, 28);
             textBox8.Name = "textBox8";
             textBox8.Size = new Size(102, 30);
             textBox8.TabIndex = 2;
@@ -517,7 +517,7 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(111, 36);
+            label7.Location = new Point(111, 31);
             label7.Name = "label7";
             label7.Size = new Size(23, 24);
             label7.TabIndex = 1;
@@ -525,7 +525,7 @@
             // 
             // textBox7
             // 
-            textBox7.Location = new Point(6, 33);
+            textBox7.Location = new Point(6, 28);
             textBox7.Name = "textBox7";
             textBox7.Size = new Size(102, 30);
             textBox7.TabIndex = 0;
@@ -534,7 +534,7 @@
             // 
             button5.Location = new Point(633, 590);
             button5.Name = "button5";
-            button5.Size = new Size(112, 34);
+            button5.Size = new Size(134, 34);
             button5.TabIndex = 4;
             button5.Text = "清空截图缓存";
             button5.UseVisualStyleBackColor = true;
