@@ -59,6 +59,8 @@ namespace NTLauncher
                     }
                 }
             }
+
+            notifyIcon1.ShowBalloonTip(3000, "信息", "NTLauncher启动成功！", ToolTipIcon.Info);
         }
 
         private void toolStripMenuItem7_Click(object sender, EventArgs e)
