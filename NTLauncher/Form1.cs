@@ -92,65 +92,6 @@ namespace NTLauncher
                 }
             }
 
-            if (this.config.AutoRun == "true")
-            {
-                RegistryKey cu = Registry.CurrentUser;
-                RegistryKey? key = cu.OpenSubKey(@"Software\Microsoft\Windows\CurrentVersion\Run", true);
-                if (key == null)
-                {
-                    RegistryKey k1 = cu.CreateSubKey("Software");
-                    RegistryKey k2 = k1.CreateSubKey("Microsoft");
-                    RegistryKey k3 = k2.CreateSubKey("Windows");
-                    RegistryKey k4 = k3.CreateSubKey("CurrentVersion");
-                    RegistryKey k5 = k4.CreateSubKey("Run");
-                    key = k5;
-                }
-                bool exist = false;
-                string[] names = key.GetValueNames();
-                foreach (string name in names)
-                {
-                    if (name.ToUpper() == "QQSSL_NTLauncher".ToUpper())
-                    {
-                        exist = true;
-                        break;
-                    }
-                }
-                if (!exist)
-                {
-                    key.SetValue("QQSSL_NTLauncher", Application.ExecutablePath);
-                }
-                key.Close();
-            }
-            else
-            {
-                RegistryKey cu = Registry.CurrentUser;
-                RegistryKey? key = cu.OpenSubKey(@"Software\Microsoft\Windows\CurrentVersion\Run", true);
-                if (key == null)
-                {
-                    RegistryKey k1 = cu.CreateSubKey("Software");
-                    RegistryKey k2 = k1.CreateSubKey("Microsoft");
-                    RegistryKey k3 = k2.CreateSubKey("Windows");
-                    RegistryKey k4 = k3.CreateSubKey("CurrentVersion");
-                    RegistryKey k5 = k4.CreateSubKey("Run");
-                    key = k5;
-                }
-                bool exist = false;
-                string[] names = key.GetValueNames();
-                foreach (string name in names)
-                {
-                    if (name.ToUpper() == "QQSSL_NTLauncher".ToUpper())
-                    {
-                        exist = true;
-                        break;
-                    }
-                }
-                if (exist)
-                {
-                    key.DeleteValue("QQSSL_NTLauncher");
-                }
-                key.Close();
-            }
-
             Application.Exit();
         }
 
@@ -168,6 +109,65 @@ namespace NTLauncher
                 };
                 if (this.form2.ShowDialog() == DialogResult.OK)
                 {
+                    if (this.config.AutoRun == "true")
+                    {
+                        RegistryKey cu = Registry.CurrentUser;
+                        RegistryKey? key = cu.OpenSubKey(@"Software\Microsoft\Windows\CurrentVersion\Run", true);
+                        if (key == null)
+                        {
+                            RegistryKey k1 = cu.CreateSubKey("Software");
+                            RegistryKey k2 = k1.CreateSubKey("Microsoft");
+                            RegistryKey k3 = k2.CreateSubKey("Windows");
+                            RegistryKey k4 = k3.CreateSubKey("CurrentVersion");
+                            RegistryKey k5 = k4.CreateSubKey("Run");
+                            key = k5;
+                        }
+                        bool exist = false;
+                        string[] names = key.GetValueNames();
+                        foreach (string name in names)
+                        {
+                            if (name.ToUpper() == "QQSSL_NTLauncher".ToUpper())
+                            {
+                                exist = true;
+                                break;
+                            }
+                        }
+                        if (!exist)
+                        {
+                            key.SetValue("QQSSL_NTLauncher", Application.ExecutablePath);
+                        }
+                        key.Close();
+                    }
+                    else
+                    {
+                        RegistryKey cu = Registry.CurrentUser;
+                        RegistryKey? key = cu.OpenSubKey(@"Software\Microsoft\Windows\CurrentVersion\Run", true);
+                        if (key == null)
+                        {
+                            RegistryKey k1 = cu.CreateSubKey("Software");
+                            RegistryKey k2 = k1.CreateSubKey("Microsoft");
+                            RegistryKey k3 = k2.CreateSubKey("Windows");
+                            RegistryKey k4 = k3.CreateSubKey("CurrentVersion");
+                            RegistryKey k5 = k4.CreateSubKey("Run");
+                            key = k5;
+                        }
+                        bool exist = false;
+                        string[] names = key.GetValueNames();
+                        foreach (string name in names)
+                        {
+                            if (name.ToUpper() == "QQSSL_NTLauncher".ToUpper())
+                            {
+                                exist = true;
+                                break;
+                            }
+                        }
+                        if (exist)
+                        {
+                            key.DeleteValue("QQSSL_NTLauncher");
+                        }
+                        key.Close();
+                    }
+
                     this.handler.Write(this.config);
                 }
             }
