@@ -45,8 +45,10 @@ namespace NTLauncher
             if (this.config.EnableHotKey == "true")
             {
                 string[] hotKey = this.config.HotKey.Split('+');
-                Keys vk = (Keys)Enum.Parse(typeof(Keys), hotKey[2]);
-                success = HotKey.RegisterHotKey(this.Handle, ID_SCREENSHOTHOTKEY, KeyModifiers.Ctrl | KeyModifiers.Alt, vk);
+                KeyModifiers m1 = (KeyModifiers)Enum.Parse(typeof(KeyModifiers), hotKey[0], true);
+                KeyModifiers m2 = (KeyModifiers)Enum.Parse(typeof(KeyModifiers), hotKey[1], true);
+                Keys vk = (Keys)Enum.Parse(typeof(Keys), hotKey[2], true);
+                success = HotKey.RegisterHotKey(this.Handle, ID_SCREENSHOTHOTKEY, m1 | m2, vk);
                 if (!success)
                 {
                     int error = Marshal.GetLastWin32Error();
