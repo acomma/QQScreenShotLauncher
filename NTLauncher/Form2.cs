@@ -18,13 +18,15 @@ namespace NTLauncher
         {
             InitializeComponent();
 
+            // 在托盘图标所在右下角弹出对话框
             Screen screen = Screen.FromPoint(new Point(Cursor.Position.X, Cursor.Position.Y));
             int x = screen.WorkingArea.X + screen.WorkingArea.Width - this.Width;
             int y = screen.WorkingArea.Y + screen.WorkingArea.Height - this.Height;
             this.Location = new Point(x, y);
 
             this.config = config;
-
+            
+            // 为表单项赋值
             this.checkBox1.Checked = this.config.EnableScreenShot == "true" ? true : false;
             this.checkBox2.Checked = this.config.EnableOCR == "true" ? true : false;
             this.checkBox3.Checked = this.config.EnableUtility == "true" ? true : false;
@@ -53,8 +55,10 @@ namespace NTLauncher
             this.textBox9.Text = hotKey[2];
         }
 
+        // 确定按钮被点击
         private void button6_Click(object sender, EventArgs e)
         {
+            // 收集表单项的值
             this.config.EnableScreenShot = this.checkBox1.Checked ? "true" : "false";
             this.config.EnableOCR = this.checkBox2.Checked ? "true" : "false";
             this.config.EnableUtility = this.checkBox3.Checked ? "true" : "false";
@@ -80,14 +84,17 @@ namespace NTLauncher
 
             this.DialogResult = DialogResult.OK;
         }
-
+        
+        // 取消按钮被点击
         private void button7_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;
         }
 
+        // 清空截图缓存按钮被点击
         private void button5_MouseClick(object sender, MouseEventArgs e)
         {
+            // QQ 截图缓存的目录，“翻译”和“屏幕识图”才会产生临时文件
             string folder = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\Temp\\Capture";
             if (Directory.Exists(folder))
             {

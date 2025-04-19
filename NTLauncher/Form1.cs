@@ -21,9 +21,11 @@ namespace NTLauncher
         {
             InitializeComponent();
 
+            // 获取配置
             this.handler = new ConfigHandler(Application.StartupPath + "config.ini");
             this.config = this.handler.Read();
 
+            // 初始化 QQ IPC
             this.parent = QQIpcWrapper.CreateQQIpcParentWrapper();
             bool success = QQIpcWrapper.QQIpcParentWrapper_InitEnv(this.parent, Application.StartupPath + "parent-ipc-core-x64.dll");
             if (!success)
@@ -42,6 +44,7 @@ namespace NTLauncher
             this.pid = QQIpcWrapper.QQIpcParentWrapper_LaunchChildProcess(this.parent, this.config.QQScreenShot, callbackIpc, IntPtr.Zero, [], 0);
             QQIpcWrapper.QQIpcParentWrapper_ConnectedToChildProcess(this.parent, this.pid);
 
+            // 注册热键
             if (this.config.EnableHotKey == "true")
             {
                 string[] hotKey = this.config.HotKey.Split('+');
@@ -63,14 +66,17 @@ namespace NTLauncher
                 }
             }
 
+            // 显示启动成功气泡
             if (this.config.RunTip == "true")
             {
                 notifyIcon1.ShowBalloonTip(3000, "信息", "NTLauncher启动成功！", ToolTipIcon.Info);
             }
         }
 
+        // 退出菜单项被点击
         private void toolStripMenuItem7_Click(object sender, EventArgs e)
         {
+            // 注销热键、退出子进程、销毁 QQ IPC 包装
             if (this.parent != IntPtr.Zero)
             {
                 HotKey.UnregisterHotKey(this.Handle, ID_SCREENSHOTHOTKEY);
@@ -81,6 +87,7 @@ namespace NTLauncher
                 QQIpcWrapper.DeleteQQIpcParentWrapper(this.parent);
             }
 
+            // 清理截图缓存
             if (this.config.AutoExitClear == "true")
             {
                 string folder = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\Temp\\Capture";
@@ -94,13 +101,16 @@ namespace NTLauncher
                 }
             }
 
+            // 退出应用
             Application.Exit();
         }
 
         private Form2? form2 = null;
 
+        // 设置菜单项被点击
         private void toolStripMenuItem2_Click(object sender, EventArgs e)
         {
+            // 创建或显示设置对话框
             if (this.form2 == null || this.form2.IsDisposed)
             {
                 this.form2 = new Form2(this.config);
@@ -111,6 +121,7 @@ namespace NTLauncher
                 };
                 if (this.form2.ShowDialog() == DialogResult.OK)
                 {
+                    // 设置开机启动
                     if (this.config.AutoRun == "true")
                     {
                         RegistryKey cu = Registry.CurrentUser;
@@ -170,6 +181,7 @@ namespace NTLauncher
                         key.Close();
                     }
 
+                    // 保存配置
                     this.handler.Write(this.config);
                 }
             }
@@ -179,18 +191,22 @@ namespace NTLauncher
             }
         }
 
+        // 托盘图标被点击
         private void notifyIcon1_MouseClick(object sender, MouseEventArgs e)
         {
+            // 单机鼠标左键时发起截图
             if (e.Button == MouseButtons.Left && this.config.EnableScreenShot == "true")
             {
                 QQIpcWrapper.QQIpcParentWrapper_SendIpcMessage(this.parent, this.pid, "screenShot", "", 0);
             }
         }
 
+        // 事件循环
         protected override void WndProc(ref Message m)
         {
             switch (m.Msg)
             {
+                // 收到热键事件时发起截图
                 case HotKey.WM_HOTKEY:
                     if (m.WParam.ToInt32() == ID_SCREENSHOTHOTKEY && this.config.EnableScreenShot == "true")
                     {
