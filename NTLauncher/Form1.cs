@@ -34,7 +34,7 @@ namespace NTLauncher
                 string? msg = Marshal.PtrToStringAnsi(ptr);
                 MessageBox.Show(msg, "Æô¶¯´íÎó", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-                QQIpcWrapper.DeleteQQIpcChildWrapper(this.parent);
+                QQIpcWrapper.DeleteQQIpcParentWrapper(this.parent);
 
                 Environment.Exit(0);
             }
